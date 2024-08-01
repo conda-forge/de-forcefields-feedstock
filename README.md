@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: Transferable Double Exponential non-bonded potential for condensed phase simulations of small molecules.
 
-Development: https://github.com/qubekit/QUBEKit
+Development: https://github.com/jthorton/de-forcefields
 
 Documentation: https://github.com/jthorton/de-forcefields
 
