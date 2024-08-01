@@ -11,23 +11,30 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.10,<3.12
+    - python >=3.10,<3.13
     - pip
   run:
-    - python >=3.10,<3.12
+    - python >=3.10,<3.13
     - setuptools
     - openff-toolkit >=0.11
     - openff-interchange-base >=0.3.25
     - smirnoff-plugins >=2023
 
 test:
+  requires:
+    - openff-interchange
+    - smirnoff-plugins
   imports:
     - deforcefields
+  files:
+    - test_load.py
+  commands:
+    - python test_load.py
 
 about:
   home: https://github.com/jthorton/de-forcefields
@@ -36,7 +43,7 @@ about:
   license_file: LICENSE
   summary: Transferable Double Exponential non-bonded potential for condensed phase simulations of small molecules.
   doc_url: https://github.com/jthorton/de-forcefields
-  dev_url: https://github.com/qubekit/QUBEKit
+  dev_url: https://github.com/jthorton/de-forcefields
   description: |
     OFFXML SMIRNOFF style force field files for use with the OpenFF-Toolkit.
 
