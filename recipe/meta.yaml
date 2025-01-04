@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "de-forcefields" %}
 {% set version = "1.0.3" %}
 
@@ -11,15 +12,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.10,<3.13
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     - setuptools
     - openff-toolkit >=0.11
     - openff-interchange-base >=0.3.25
@@ -29,6 +30,7 @@ test:
   requires:
     - openff-recharge
     - smirnoff-plugins
+    - python {{ python_min }}
   imports:
     - deforcefields
   files:
