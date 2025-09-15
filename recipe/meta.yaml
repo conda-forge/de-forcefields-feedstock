@@ -16,17 +16,18 @@ build:
 
 requirements:
   host:
-    - python >=3.11,<=3.13
+    - python {{ python_min }}
     - pip
-  run:
-    - python >=3.11,<=3.13
     - setuptools
+  run:
+    - python >={{ python_min }}
     - openff-toolkit >=0.16
     - openff-interchange-base >=0.4.6
     - smirnoff-plugins >=2025.09.0
 
 test:
   requires:
+    - python {{ python_min }}
     - openff-recharge
   imports:
     - deforcefields
