@@ -152,6 +152,7 @@ Feedstock Maintainers
 
 * [@SimonBoothroyd](https://github.com/SimonBoothroyd/)
 * [@djcole56](https://github.com/djcole56/)
+* [@fjclark](https://github.com/fjclark/)
 * [@jthorton](https://github.com/jthorton/)
 * [@pavankum](https://github.com/pavankum/)
 

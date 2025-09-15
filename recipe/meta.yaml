@@ -1,5 +1,5 @@
 {% set name = "de-forcefields" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jthorton/de-forcefields/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c833e2752d3594432419676971334edce082642f3d5f61a8f6c85a3ea7d1ee8f
+  sha256: 2a8b84a87b9b234d84157b512b23558c5da06d3d691e599798b317967a1cc78a
 
 build:
   noarch: python
@@ -16,19 +16,19 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<3.13
+    - python {{ python_min }}
     - pip
-  run:
-    - python >=3.10,<3.13
     - setuptools
-    - openff-toolkit >=0.11
-    - openff-interchange-base >=0.3.25
-    - smirnoff-plugins >=2023
+  run:
+    - python >={{ python_min }}
+    - openff-toolkit >=0.16
+    - openff-interchange-base >=0.4.6
+    - smirnoff-plugins >=2025.09.0
 
 test:
   requires:
+    - python {{ python_min }}
     - openff-recharge
-    - smirnoff-plugins
   imports:
     - deforcefields
   files:
@@ -53,3 +53,4 @@ extra:
     - djcole56
     - pavankum
     - SimonBoothroyd
+    - fjclark
